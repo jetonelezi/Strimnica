@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Strimnica - Trungu Familjar</title>
+       <link rel="icon" type="image/png" href="foto\LOGO STR.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+
+    <style>
+        footer { 
+            text-align: center; 
+            padding: 50px 20px; 
+            background: var(--dark); 
+            color: #ffffff; 
+            margin-top: 60px;
+        }
+        .footer-content { max-width: 1000px; margin: 0 auto; }
+        .footer-credits { 
+            margin-top: 20px; 
+            padding-top: 20px; 
+            border-top: 1px solid rgba(255,255,255,0.1); 
+            font-size: 0.95rem; 
+            color: #888;
+        }
+        .footer-credits strong { color: var(--accent); }
+        .footer-link { 
+            color: #ffffff; 
+            text-decoration: none; 
+            font-weight: 700; 
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .footer-link:hover { color: var(--accent); }
+
+        .logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 5px; /* Hapësira mes logos dhe tekstit */
+    font-size: 34px; 
+    font-weight: 700; 
+    text-decoration: none; 
+    color: var(--dark); 
+}
+
+
+.hero-main, .hero {
+    height: 40vh; /* E përshtatur që të jetë kompakte për trungun */
+    min-height: 300px;
+    /* Këtu kemi rritur opacity-n e gradient-it nga 0.2/0.6 në 0.5/0.85 */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.85)), 
+                url('foto\\Gemini_Generated_Image_e87f7xe87f7xe87f.png') center/cover;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+    padding: 0 20px;
+}
+
+.nav-logo-img {
+    height: 60px; /* Mund ta rregullosh sipas dëshirës */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Sigurohu që klikimi mbi foton e logos të mos hapë modal-in e galerisë */
+.nav-logo-img {
+    pointer-events: none; 
+}
+
+ .logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 900; text-decoration: none; color: var(--dark); }
+        .logo img { height: 40px; }
+        .back-link { text-decoration: none; color: var(--accent); font-weight: 700; }
+        .source-citation {
+    background-color: #f9f9f9; /* Ngjyrë e lehtë që e veçon */
+    padding: 30px 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.citation-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.citation-content p {
+    font-style: italic;
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.book-icon {
+    font-size: 1.8rem;
+}
+
+/* Rregullimi për celular */
+@media (max-width: 600px) {
+    .citation-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+    </style>
+</head>
+<body>
+
+   <nav class="navbar">
+    <a href="index.html" class="logo">
+        <img src="foto\LOGO STR.png" alt="Logo" class="nav-logo-img"> 
+        Strimnica
+    </a>
+    <a href="index.html" class="back-link">← Kthehu</a>
+</nav>
+
+    <header id="home-section" class="hero">
+        <div class="hero-content">
+            <h1>Trungu Familjar</h1>
+            <p>Eksploroni historinë dhe rrënjët e familjeve tona.</p>
+            <div class="search-container">
+               <input type="text" id="searchInput" onkeyup="searchName()" placeholder="Kërko emrin (p.sh. Vesel)..." autocomplete="off">
+<div id="searchResults" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="family-selector" class="container">
+        <h2 class="section-title">Zgjidhni Familjen</h2>
+        <div class="family-selection-grid">
+            <div class="f-card active-green" onclick="startTree('Xhepet')"><h3>XHEPET</h3></div>
+            <div class="f-card active-green" onclick="startTree('Matet')"><h3>MATËT</h3></div>
+            <div class="f-card active-green" onclick="startTree('Kuset')"><h3>KUSET</h3></div>
+            <div class="f-card active-green" onclick="startTree('Murraket')"><h3>MURRAKET</h3></div>
+            <div class="f-card active-green" onclick="startTree('Memetet')"><h3>MEMETET</h3></div>
+            <div class="f-card active-green" onclick="startTree('Kaset')"><h3>KASET</h3></div>
+            <div class="f-card active-green" onclick="startTree('Kasamajt')"><h3>KASAMAJT</h3></div>
+            <div class="f-card active-green" onclick="startTree('Ardhacakë të tjerë')"><h3>TË TJERË</h3></div>
+        </div>
+    </section>
+
+    <section id="trungu-section" class="trungu-wrapper" style="display: none;">
+        <aside class="sidebar">
+
+    
+    <div class="sidebar-header">
+        <h3>NAVIGIMI</h3>
+        <button id="back-btn" onclick="goBack()" class="small-back-btn">← KTHEHU PAS</button>
+    </div>
+    
+    <ul id="breadcrumb-list"></ul>
+</aside>
+
+        <main class="main-content">
+            <div class="header-info">
+                <h2 id="current-family-title"></h2>
+                <div id="family-desc" class="desc-box"></div>
+            </div>
+            <div id="family-grid" class="family-grid"></div>
+        </main>
+    </section>
+
+
+
+
+    <div class="source-citation">
+    <div class="citation-content">
+        <span class="book-icon">📖</span>
+        <p>Informacionet për trungun familjar dhe për historikun janë marrur nga libri <strong>"STRIMNICA"</strong> nga i ndjeri <strong>Nexhbedin Abdiu</strong>.</p>
+    </div>
+</div>
+    <footer>
+        <div class="footer-content">
+            <p>Strimnica &copy; 2026 - Të gjitha të drejtat e rezervuara.</p>
+            <div class="footer-credits">
+                Krijuar nga: <strong>Jeton Elezi</strong><br>
+                <a href="https://www.jetonelezi.com" class="footer-link" target="_blank">www.jetonelezi.com</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

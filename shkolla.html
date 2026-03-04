@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHKOLLA FILLORE - Strimnica</title>
+    <link rel="icon" type="image/png" href="foto/LOGO STR.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #27ae60;
+            --dark: #1a1a1a;
+            --light: #f4f7f6;
+            --text-gray: #666;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+
+        /* Navbar */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 8%; background: white; position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 900; text-decoration: none; color: var(--dark); }
+        .logo img { height: 40px; }
+        .back-link { text-decoration: none; color: var(--accent); font-weight: 700; }
+
+        /* Hero News Section */
+        .news-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('foto/WhatsApp Image 2026-03-04 at 19.07.02.jpeg') center/cover;
+            color: white; padding: 80px 20px; text-align: center;
+        }
+        .news-header h1 { font-size: 3rem; font-weight: 900; margin-bottom: 10px; }
+
+        /* Main Content */
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* News Card Style */
+        .news-card {
+            background: white; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            display: flex; flex-direction: column;
+        }
+        .news-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+        .news-img { width: 100%; height: 200px; object-fit: cover; }
+
+        .news-content { padding: 25px; flex-grow: 1; }
+        .news-category { 
+            display: inline-block; padding: 5px 12px; background: rgba(39, 174, 96, 0.1); 
+            color: var(--accent); border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px;
+        }
+        .news-date { color: var(--text-gray); font-size: 0.85rem; margin-bottom: 10px; display: block; }
+        .news-title { font-size: 1.4rem; margin-bottom: 15px; color: var(--dark); font-weight: 700; }
+        .news-excerpt { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; }
+
+        .btn-read {
+            text-decoration: none; color: white; background: var(--accent);
+            padding: 10px 20px; border-radius: 8px; font-weight: 700;
+            display: inline-block; transition: 0.3s; text-align: center;
+        }
+        .btn-read:hover { background: #219150; }
+
+        /* Footer */
+       footer { 
+            text-align: center; 
+            padding: 50px 20px; 
+            background: var(--dark); 
+            color: #ffffff; 
+            margin-top: 60px;
+        }
+        .footer-content { max-width: 1000px; margin: 0 auto; }
+        .footer-credits { 
+            margin-top: 20px; 
+            padding-top: 20px; 
+            border-top: 1px solid rgba(255,255,255,0.1); 
+            font-size: 0.95rem; 
+            color: #888;
+        }
+        .footer-credits strong { color: var(--accent); }
+        .footer-link { 
+            color: #ffffff; 
+            text-decoration: none; 
+            font-weight: 700; 
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .footer-link:hover { color: var(--accent); }
+        @media (max-width: 768px) {
+            .news-header h1 { font-size: 2.2rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="foto/LOGO STR.png" alt="Logo"> STRIMNICA
+        </a>
+        <a href="index.html" class="back-link">← Ballina</a>
+    </nav>
+
+    <header class="news-header">
+        <h1>Shkolla Fillore 'Ibrahim Temo'</h1>
+        <p>Qëndroni të informuar me gjithçka që ndodh në shkollën tonë.</p>
+    </header>
+
+    <div class="container">
+        <div class="news-grid">
+
+           <h1 style="text-align: center;">NUK KEMI ENDE LAJME TE SHKOLLES PER PUBLIKIM....</h1>
+
+        </div>
+    </div>
+
+      <footer>
+        <div class="footer-content">
+            <p>Strimnica &copy; 2026 - Të gjitha të drejtat e rezervuara.</p>
+            <div class="footer-credits">
+                Krijuar nga: <strong>Jeton Elezi</strong><br>
+                <a href="https://www.jetonelezi.com" class="footer-link" target="_blank">www.jetonelezi.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

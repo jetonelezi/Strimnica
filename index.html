@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strimnica - Mirësevini</title>
+    <link rel="icon" type="image/png" href="foto\LOGO STR.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+    .logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 5px; /* Hapësira mes logos dhe tekstit */
+    font-size: 34px; 
+    font-weight: 700; 
+    text-decoration: none; 
+    color: var(--dark); 
+}
+
+.nav-logo-img {
+    height: 60px; /* Mund ta rregullosh sipas dëshirës */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Sigurohu që klikimi mbi foton e logos të mos hapë modal-in e galerisë */
+.nav-logo-img {
+    pointer-events: none; 
+}
+     footer { 
+            text-align: center; 
+            padding: 50px 20px; 
+            background: var(--dark); 
+            color: #ffffff; 
+            margin-top: 60px;
+        }
+        .footer-content { max-width: 1000px; margin: 0 auto; }
+        .footer-credits { 
+            margin-top: 20px; 
+            padding-top: 20px; 
+            border-top: 1px solid rgba(255,255,255,0.1); 
+            font-size: 0.95rem; 
+            color: #888;
+        }
+        .footer-credits strong { color: var(--accent); }
+        .footer-link { 
+            color: #ffffff; 
+            text-decoration: none; 
+            font-weight: 700; 
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .footer-link:hover { color: var(--accent); }
+</style>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+        <img src="foto\LOGO STR.png" alt="Logo" class="nav-logo-img"> 
+         <div class="logo">STRIMNICA<span></span></div>
+    </a>
+       
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Ballina</a></li>
+            <li><a href="trungu-familjar.html">Trungu Familjar</a></li>
+            <li><a href="lajme.html">Lajme</a></li>
+            <li><a href="historia.html">Histori</a></li>
+            <li><a href="shkolla.html">Shkolla Fillore</a></li>
+            <li><a href="klubi.html">KF.Mergimtari</a></li>
+            <li><a href="galeria.html">Foto</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-main">
+        <div class="hero-content">
+            <h1>Mirësevini në Shtëpinë Tonë Digjitale</h1>
+            <p>Një vend ku historia takon të ardhmen. Eksploroni rrënjët dhe zhvillimet e fundit të fshatit tonë.</p>
+            <div class="hero-btns">
+            </div>
+        </div>
+    </header>
+
+    <section class="quick-access">
+        <div class="grid-container">
+            
+            <div class="info-card">
+                <div class="icon">📰</div>
+                <h3>Lajmet e Fundit</h3>
+                <p>Informohuni mbi aktivitetet dhe ngjarjet e fundit në komunitet.</p>
+                <a href="lajme.html" class="read-more">Lexo më shumë →</a>
+            </div>
+
+            <div class="info-card highlight">
+                <div class="icon">🌳</div>
+                <h3>Trungu Familjar</h3>
+                <p>Gjeni vendin tuaj në pemën gjigante me mbi 2000 emra të fshatit.</p>
+                <a href="trungu-familjar.html" class="read-more">Kërko emrin →</a>
+            </div>
+
+            <div class="info-card">
+                <div class="icon">📸</div>
+                <h3>Galeria e Fotove</h3>
+                <p>Momente të kapura ndër vite, nga natyra te festat tona.</p>
+                <a href="galeria.html" class="read-more">Shiko fotot →</a>
+            </div>
+            
+            
+            <div class="info-card">
+                <div class="icon">📜</div>
+                <h3>Historia e Fshatit</h3>
+                <p>Udhëtoni në kohë për të zbuluar rrënjët e hershme dhe trashëgiminë tonë.</p>
+                <a href="historia.html" class="read-more">Lexo historinë →</a>
+            </div>
+
+<div class="info-card">
+    <div class="icon">🏫</div>
+    <h3>SHF "Ibrahim Temo"</h3>
+    <p>Vatra e diturisë ku gjenerata të tëra formuan hapat e tyre të parë drejt dijes.</p>
+    <a href="shkolla.html" class="read-more">Mëso më shumë →</a>
+</div>
+
+<div class="info-card">
+    <div class="icon">💼</div>
+    <h3>Bizneset Lokale</h3>
+    <p>Zbuloni kompanitë dhe shërbimet që operojnë në fshatin tonë.</p>
+    <a href="bizneset.html" class="read-more">Shiko listën →</a>
+</div>
+
+<div class="info-card">
+    <div class="icon">⚽</div>
+    <h3>KF "Mërgimtari"</h3>
+    <p>Zemra sportive e fshatit. Historia, sukseset dhe rrugëtimi i klubit tonë ndër vite.</p>
+    <a href="klubi.html" class="read-more">Shiko klubin →</a>
+</div>
+
+<div class="info-card">
+    <div class="icon">📞</div>
+    <h3>Na Kontaktoni</h3>
+    <p>Keni pyetje apo dëshironi të kontribuoni? Na shkruani ose na vizitoni në rrjetet sociale.</p>
+    <a href="kontakt.html" class="read-more">Detajet e kontaktit →</a>
+</div>
+
+
+
+
+        </div>
+    </section>
+
+  <footer>
+        <div class="footer-content">
+            <p>Strimnica &copy; 2026 - Të gjitha të drejtat e rezervuara.</p>
+            <div class="footer-credits">
+                Krijuar nga: <strong>Jeton Elezi</strong><br>
+                <a href="https://www.jetonelezi.com" class="footer-link" target="_blank">www.jetonelezi.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
