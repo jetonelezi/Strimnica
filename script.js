@@ -888,7 +888,11 @@ const FAMILJET_MADHE = [
                 ]},
               ]},
               {name:"Vexhi", description:"djali i tretë i Isakut ka pesë vajza dhe dy djem: Maxhiden, Mahiun, Mamudijen, Ajshen, Isakun, Nurijen dhe Maiden.", children:[
-                {name:"Mahi", description:"djali i madh i Vexhiut, ka vetëm dy vajza: Nexhdeten dhe Sarën."},
+                {name:"Mahi", description:"djali i madh i Vexhiut, ka dy vajza dhe një djalë: Nexhdeten, Saren dhe Agonin", 
+                  children:[
+                    {name:"Agon", description:"djali i vetëm i Mahiut"},
+                  ]
+                },
                 {name:"Isak", description:"djali i dytë i Vexhiut, ka dy djem: Gëzimin dhe Besimin", children:[
                   {name:"Gëzim", description:"teksti"},
                   {name:"Besim", description:"teksti"},
