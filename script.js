@@ -554,8 +554,13 @@ const FAMILJET_MADHE = [
                     {name:"Namik", description:"teksti"},
                     {name:"Jetmir", description:"teksti"},
                   ]},
-                  {name:"Samet", description:"djali i vogël i Zirapit, ka një djalë dhe dy vajza: Atmirin, Suzanën dhe Xharijen.", children:[
-                    {name:"Atmir", description:"teksti"},
+                  {name:"Samet", description:"djali i vogël i Zirapit, ka një djalë dhe dy vajza: Admir, Suzanën dhe Xharijen.", children:[
+                    {name:"Admir", description:"djali i vetëm i Sametit, ka dy djem: Leardin dhe Ledionin", 
+                      children:[
+                        {name:"Leardin", description:""},
+                        {name:"Ledion", description:""},
+                      ]
+                    },
                   ]},
                 ]},
                 {name:"Seza", description:"djali tretë i Sejfullahut, ka lënë tri vajza dhe dy djem: Hatixhen, Nehatin, Qanijen, Gjiltenen dhe Qaniun.", children:[
