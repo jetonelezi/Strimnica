@@ -686,7 +686,7 @@ const FAMILJET_MADHE = [
               {name:"Azem", description:"djali i gjashtë i Mislimit, ka lënë katër djem: Ilazin, Mislimin, Kasamin dhe Shabanin.", children:[
                 {name:"Ilaz", description:"djali i madh i Azemit, ka lënë dy djem dhe dy vajza: Nebiun, Habiben, Sherifin dhe Havijen. Të dyja vajzat janë të martuara në Zhelinë.", children:[
                   {name:"Nebi", description:"djali i madh i Ilazit, nuk ka femije."},
-                  {name:"Sherif", description:"djali i dytë i Ilazit, ka një djalë dhe katër vajza: Enzilen, Erminen, Nadiren dhe Gëzimin.", children:[
+                  {name:"Sherif", description:"djali i dytë i Ilazit, ka një djalë dhe katër vajza: Enzilen, Resmijen, Erminen, Nadiren dhe Gëzimin.", children:[
                     {name:"Gëzim", description:"djali i vetëm i Sherifit, ka dy vjaza: Ameren dhe Amilen.", },
                   ]},
                 ]},
