@@ -685,9 +685,9 @@ const FAMILJET_MADHE = [
               ]},
               {name:"Azem", description:"djali i gjashtë i Mislimit, ka lënë katër djem: Ilazin, Mislimin, Kasamin dhe Shabanin.", children:[
                 {name:"Ilaz", description:"djali i madh i Azemit, ka lënë dy djem dhe dy vajza: Nebiun, Habiben, Sherifin dhe Havijen. Të dyja vajzat janë të martuara në Zhelinë.", children:[
-                  {name:"Nebi", description:"djali i madh i Ilazit, ka adoptuar Resmijen, vajzën e vëllaut të tij, Sherifit."},
-                  {name:"Sherif", description:"djali i dytë i Ilazit, ka një djalë dhe katër vajza: Enzilen, Resmijen që ia ka dhënë vëllaut të tij, Erminen, Nadiren dhe Gëzimin.", children:[
-                    {name:"Gëzim", description:"teksti"},
+                  {name:"Nebi", description:"djali i madh i Ilazit, nuk ka femije."},
+                  {name:"Sherif", description:"djali i dytë i Ilazit, ka një djalë dhe katër vajza: Enzilen, Erminen, Nadiren dhe Gëzimin.", children:[
+                    {name:"Gëzim", description:"djali i vetëm i Sherifit, ka dy vjaza: Ameren dhe Amilen.", },
                   ]},
                 ]},
                 {name:"Mislim", description:"djali i dytë i Azemit, ka jetuar në Gradinë të Sllavonisë në Kroaci. Ky ka lënë dy djem dhe një vajzë: Mediun, Nexhiben dhe Jusufin, të cilët jetojnë atje.", children:[
@@ -868,7 +868,7 @@ const FAMILJET_MADHE = [
            {name:"Nuhi", description:"djali i madh i Hajdarit, ka lënë një djalë dhe një vajzë: Isakun dhe Miqeremen. Miqeremja ka qenë e martuar në Reçicë", children:[
             {name:"Isak", description:"djali i vetëm i Nuhiut, ka lënë tri vajza dhe tre djem: Remzijen, Arzihanen, Fatimen, Xhemaliun, Ilmiun dhe Vexhiun. Të tri vajzat e tij kanë qenë të martuara në Bogovijë.", children:[
               {name:"Xhemali", description:"djali i madh i Isakut, ka lënë tre djem dhe një vajzë: Gaziun, Arifen, Zijahun dhe Zeqirjahun.", children:[
-                {name:"Gazi", description:"djali i madh i Xhemaliut, ka dy vajza dhe tre djem: Gjilimseren, Resmijen, Naserin, Abdilaqimin dhe Daimin.", children:[
+                {name:"Gazi", description:"djali i madh i Xhemaliut, ka tre vajza dhe tre djem: Gjilimseren, Resmijen, Naserin, Abdilaqimin Daimin dhe Sermijeten.", children:[
                   {name:"Naser", description:"teksti"},
                   {name:"Abdilaqim", description:"teksti"},
                   {name:"Daim", description:"teksti"},
@@ -893,9 +893,10 @@ const FAMILJET_MADHE = [
                 ]},
               ]},
               {name:"Vexhi", description:"djali i tretë i Isakut ka pesë vajza dhe dy djem: Maxhiden, Mahiun, Mamudijen, Ajshen, Isakun, Nurijen dhe Maiden.", children:[
-                {name:"Mahi", description:"djali i madh i Vexhiut, ka dy vajza dhe një djalë: Nexhdeten, Saren dhe Agonin", 
+                {name:"Mahi", description:"djali i madh i Vexhiut, ka dy djem dhe një vajzë: Nexhdetin, Saren dhe Agonin", 
                   children:[
-                    {name:"Agon", description:"djali i vetëm i Mahiut"},
+                    {name:"Nexhdet", description:"djali i parë i Mahiut"},
+                    {name:"Agon", description:"djali i dytë i Mahiut"},
                   ]
                 },
                 {name:"Isak", description:"djali i dytë i Vexhiut, ka dy djem: Gëzimin dhe Besimin", children:[
