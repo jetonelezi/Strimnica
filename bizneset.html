@@ -11,11 +11,11 @@
             --accent: #27ae60;
             --dark: #1a1a1a;
             --light: #f4f7f6;
-            --gold: #d4af37;
+            --fb-blue: #1877F2;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); }
+        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
 
         /* Navbar */
         .navbar {
@@ -29,134 +29,115 @@
 
         /* Hero Bizneset */
         .biz-header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('foto/biznesi-bg.jpg') center/cover;
-            color: white; padding: 60px 20px; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('foto/biznesi-bg.jpg') center/cover;
+            color: white; padding: 80px 20px; text-align: center;
         }
-        .biz-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .biz-header h1 { font-size: 2.8rem; margin-bottom: 10px; font-weight: 900; }
 
         /* Business Grid */
-        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
         
         .biz-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
         .biz-card {
-            background: white; border-radius: 15px; overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s; border: 1px solid #eee;
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s; border: 1px solid rgba(0,0,0,0.05);
             display: flex; flex-direction: column;
+            height: 100%;
         }
-        .biz-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .biz-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
 
         .biz-logo-area {
-            height: 180px; background: #f9f9f9;
+            height: 200px; background: #ffffff;
             display: flex; align-items: center; justify-content: center;
-            padding: 20px; border-bottom: 1px solid #eee;
+            padding: 25px; position: relative;
         }
         .biz-logo-area img { max-height: 100%; max-width: 100%; object-fit: contain; }
 
-        .biz-info { padding: 20px; flex-grow: 1; }
-        .biz-tag { font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-        .biz-name { font-size: 1.3rem; margin: 10px 0; color: var(--dark); }
-        .biz-desc { font-size: 0.9rem; color: #666; margin-bottom: 20px; height: 60px; overflow: hidden; }
+        .biz-info { 
+            padding: 25px; 
+            flex-grow: 1; 
+            text-align: center; 
+            border-top: 1px solid #f0f0f0; 
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .biz-tag { font-size: 0.7rem; color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 8px; }
+        
+        .biz-name { 
+            font-size: 1.4rem; 
+            margin: 5px 0 10px 0; 
+            color: var(--dark); 
+            font-weight: 900; 
+            min-height: 3.4rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        
+        .biz-desc { font-size: 0.95rem; color: #666; margin-bottom: 15px; font-style: italic; }
 
-        .biz-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .biz-actions { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 12px; 
+            margin-top: auto; 
+        }
+        
         .btn-action {
-            text-decoration: none; padding: 10px; border-radius: 8px;
-            font-size: 0.85rem; font-weight: 700; text-align: center; transition: 0.2s;
+            text-decoration: none; padding: 12px 5px; border-radius: 10px;
+            font-size: 0.85rem; font-weight: 700; text-align: center; transition: 0.3s;
         }
         .btn-call { background: var(--accent); color: white; }
-        .btn-map { background: #eee; color: var(--dark); }
-        .btn-call:hover { background: #219150; }
-        .btn-map:hover { background: #ddd; }
+        .btn-fb { background: var(--fb-blue); color: white; }
+        .btn-call:hover { background: #219150; opacity: 0.9; }
+        .btn-fb:hover { opacity: 0.9; }
 
-        /* Footer Section */
-        footer { text-align: center; padding: 40px; background: var(--dark); color: white; margin-top: 60px; }
-
-        @media (max-width: 600px) {
-            .biz-grid { grid-template-columns: 1fr; }
-        }
-
-         footer { 
-            text-align: center; 
-            padding: 50px 20px; 
-            background: var(--dark); 
-            color: #ffffff; 
-            margin-top: 60px;
-        }
-        .footer-content { max-width: 1000px; margin: 0 auto; }
-        .footer-credits { 
-            margin-top: 20px; 
-            padding-top: 20px; 
-            border-top: 1px solid rgba(255,255,255,0.1); 
-            font-size: 0.95rem; 
-            color: #888;
-        }
-        .footer-credits strong { color: var(--accent); }
-        .footer-link { 
-            color: #ffffff; 
-            text-decoration: none; 
-            font-weight: 700; 
-            transition: 0.3s;
-            display: inline-block;
-            margin-top: 5px;
-        }
-        .footer-link:hover { color: var(--accent); }
+        /* Mobile View (3 items per row) */
         @media (max-width: 768px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-            .contact-info { order: 2; }
+            .container { padding: 0 10px; margin: 20px auto; }
+            .biz-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+            .biz-card { border-radius: 12px; }
+            .biz-logo-area { height: 100px; padding: 10px; }
+            .biz-info { padding: 10px 5px; }
+            .biz-name { 
+                font-size: 0.85rem; 
+                min-height: auto; 
+                margin-bottom: 5px; 
+                line-height: 1.2;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .biz-tag { font-size: 0.55rem; letter-spacing: 0.5px; }
+            
+            /* NDRYSHIMI KETU: E hoqa display:none qe Besir Elezi te shfaqet */
+            .biz-desc { 
+                display: block; 
+                font-size: 0.65rem; 
+                margin-bottom: 8px; 
+            }
+            
+            .biz-info hr, .biz-info br { display: none; } /* I fshehim ne celular qe te mos zene vend te kote */
+            
+            .biz-actions { grid-template-columns: 1fr; gap: 4px; }
+            .btn-action { padding: 6px 2px; font-size: 0.65rem; border-radius: 6px; }
+            .biz-header h1 { font-size: 1.8rem; }
         }
 
-
-        /* Rregullimi për celular (3 në rresht) */
-@media (max-width: 600px) {
-    .container {
-        padding: 0 5px; /* Më pak hapësirë anash për të fituar vend */
-    }
-
-    .biz-grid {
-        grid-template-columns: repeat(3, 1fr); /* FORCON 3 rreshta */
-        gap: 8px; /* Hapësirë shumë e vogël mes tyre */
-    }
-
-    .biz-logo-area {
-        height: 80px; /* Më e shkurtër */
-        padding: 5px;
-    }
-
-    .biz-info {
-        padding: 8px;
-    }
-
-    .biz-name {
-        font-size: 0.8rem; /* Shkrim më i vogël */
-        margin: 5px 0;
-        white-space: nowrap; /* Ndalon shpërndarjen në dy rreshta */
-        overflow: hidden;
-        text-overflow: ellipsis; /* Shton "..." nëse emri është shumë i gjatë */
-    }
-
-    .biz-tag {
-        font-size: 0.6rem;
-    }
-
-    .biz-desc {
-        display: none; /* Fshehim përshkrimin në celular për të kursyer vend */
-    }
-
-    .biz-actions {
-        grid-template-columns: 1fr; /* Butonat njëri mbi tjetrin */
-        gap: 5px;
-    }
-
-    .btn-action {
-        padding: 6px 2px;
-        font-size: 0.7rem;
-    }
-}
+        /* Footer */
+        footer { text-align: center; padding: 60px 20px; background: var(--dark); color: white; margin-top: 60px; }
+        .footer-credits { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #888; }
+        .footer-credits strong { color: var(--accent); }
+        .footer-link { color: #ffffff; text-decoration: none; font-weight: 700; transition: 0.3s; }
+        .footer-link:hover { color: var(--accent); }
     </style>
 </head>
 <body>
@@ -178,99 +159,100 @@
 
             <div class="biz-card">
                 <div class="biz-logo-area">
-                    <img src="foto/biznes-logo1.png" alt="Emri i Biznesit"> </div>
+                    <img src="Logo/Logo Infinity.png" alt="Infinity Production">
+                </div>
                 <div class="biz-info">
-                    <span class="biz-tag">Lloji...</span>
-                    <h2 class="biz-name">Emri i Kompanisë</h2>
-                    <p class="biz-desc">....</p>
+                    <span class="biz-tag">Produksion Dasmash</span>
+                    <h2 class="biz-name">Infinity Production</h2>
+                    <p class="biz-desc">Jeton Elezi</p>
+                    <hr><br>
                     <div class="biz-actions">
                         <a href="tel:+38972722060" class="btn-action btn-call">📞 Kontakt</a>
-                        <a href="https://maps.app.goo.gl/B4X3evHgRaJoiWdh7" target="_blank" class="btn-action btn-map">📍 Vendndodhja</a>
+                        <a href="https://www.facebook.com/profile.php?id=61581530814236" target="_blank" class="btn-action btn-fb">📘 Facebook</a>
                     </div>
                 </div>
             </div>
 
             <div class="biz-card">
                 <div class="biz-logo-area">
-                    <img src="foto/biznes-logo1.png" alt="Emri i Biznesit"> </div>
+                    <img src="Logo/Garden Center Rushiti.jpeg" alt="Garden Center Rushiti">
+                </div>
                 <div class="biz-info">
-                    <span class="biz-tag">Lloji...</span>
-                    <h2 class="biz-name">Emri i Kompanisë</h2>
-                    <p class="biz-desc">....</p>
+                    <span class="biz-tag">Lulishte</span>
+                    <h2 class="biz-name">Garden Center RUSHITI</h2>
+                    <p class="biz-desc">Bedri Rushiti</p>
+                    <hr><br>
                     <div class="biz-actions">
-                        <a href="tel:+38972722060" class="btn-action btn-call">📞 Kontakt</a>
-                        <a href="https://maps.app.goo.gl/B4X3evHgRaJoiWdh7" target="_blank" class="btn-action btn-map">📍 Vendndodhja</a>
+                        <a href="tel:+38970587042" class="btn-action btn-call">📞 Kontakt</a>
+                        <a href="https://www.facebook.com/garden.center.rushiti" target="_blank" class="btn-action btn-fb">📘 Facebook</a>
                     </div>
                 </div>
             </div>
 
             <div class="biz-card">
                 <div class="biz-logo-area">
-                    <img src="foto/biznes-logo1.png" alt="Emri i Biznesit"> </div>
+                    <img src="Logo/BFM LOGO.jpg" alt="BFM">
+                </div>
                 <div class="biz-info">
-                    <span class="biz-tag">Lloji...</span>
-                    <h2 class="biz-name">Emri i Kompanisë</h2>
-                    <p class="biz-desc">....</p>
+                    <span class="biz-tag">Shërbime</span>
+                    <h2 class="biz-name">BFM</h2>
+                    <p class="biz-desc">Fejsal Mustafi</p>
+                    <hr><br>
                     <div class="biz-actions">
-                        <a href="tel:+38972722060" class="btn-action btn-call">📞 Kontakt</a>
-                        <a href="https://maps.app.goo.gl/B4X3evHgRaJoiWdh7" target="_blank" class="btn-action btn-map">📍 Vendndodhja</a>
+                        <a href="tel:+38975295482" class="btn-action btn-call">📞 Kontakt</a>
+                        <a href="https://www.facebook.com/bfmnmk" target="_blank" class="btn-action btn-fb">📘 Facebook</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="biz-card">
+                <div class="biz-logo-area">
+                    <img src="Logo/Lavdrim Term.png" alt="Lavdrim term">
+                </div>
+                <div class="biz-info">
+                    <span class="biz-tag">Uje Sjelles</span>
+                    <h2 class="biz-name">Lavdrim term</h2>
+                    <p class="biz-desc">Besir Elezi</p>
+                    <hr><br>
+                    <div class="biz-actions">
+                        <a href="tel:+38970371804" class="btn-action btn-call">📞 Kontakt</a>
+                        <a href="https://www.facebook.com/profile.php?id=100041376197153" target="_blank" class="btn-action btn-fb">📘 Facebook</a>
                     </div>
                 </div>
             </div>
 
 
-            <div class="biz-card">
+             <div class="biz-card">
                 <div class="biz-logo-area">
-                    <img src="foto/biznes-logo1.png" alt="Emri i Biznesit"> </div>
+                    <img src="Logo\AS-gips.png" alt="AS GIPS">
+                </div>
                 <div class="biz-info">
-                    <span class="biz-tag">Lloji...</span>
-                    <h2 class="biz-name">Emri i Kompanisë</h2>
-                    <p class="biz-desc">....</p>
+                    <span class="biz-tag">Moler & Gipser</span>
+                    <h2 class="biz-name">AS Gips</h2>
+                    <p class="biz-desc">Admir Saiti & Samir Beluli</p>
+                    <hr><br>
                     <div class="biz-actions">
-                        <a href="tel:+38972722060" class="btn-action btn-call">📞 Kontakt</a>
-                        <a href="https://maps.app.goo.gl/B4X3evHgRaJoiWdh7" target="_blank" class="btn-action btn-map">📍 Vendndodhja</a>
+                        <a href="tel:+38975295482" class="btn-action btn-call">📞 Kontakt (Admir) </a>
+                        <a href="tel:+38975295482" class="btn-action btn-call">📞 Kontakt (Samir) </a>
+                        <a href="https://www.facebook.com/profile.php?id=100076467087197" target="_blank" class="btn-action btn-fb">📘 Facebook</a>
                     </div>
                 </div>
             </div>
-        
-            <div class="biz-card">
-                <div class="biz-logo-area">
-                    <img src="foto/biznes-logo1.png" alt="Emri i Biznesit"> </div>
-                <div class="biz-info">
-                    <span class="biz-tag">Lloji...</span>
-                    <h2 class="biz-name">Emri i Kompanisë</h2>
-                    <p class="biz-desc">....</p>
-                    <div class="biz-actions">
-                        <a href="tel:+38972722060" class="btn-action btn-call">📞 Kontakt</a>
-                        <a href="https://maps.app.goo.gl/B4X3evHgRaJoiWdh7" target="_blank" class="btn-action btn-map">📍 Vendndodhja</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="biz-card">
-                <div class="biz-logo-area">
-                    <img src="foto/biznes-logo1.png" alt="Emri i Biznesit"> </div>
-                <div class="biz-info">
-                    <span class="biz-tag">Lloji...</span>
-                    <h2 class="biz-name">Emri i Kompanisë</h2>
-                    <p class="biz-desc">....</p>
-                    <div class="biz-actions">
-                        <a href="tel:+38972722060" class="btn-action btn-call">📞 Kontakt</a>
-                        <a href="https://maps.app.goo.gl/B4X3evHgRaJoiWdh7" target="_blank" class="btn-action btn-map">📍 Vendndodhja</a>
-                    </div>
-                </div>
-            </div>
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+            
         </div>
     </div>
- <footer>
+
+    <footer>
         <div class="footer-content">
-            <p>Strimnica &copy; 2026 - Të gjitha të drejtat e rezervuara.</p>
+            <p>Strimnica © 2026 - Të gjitha të drejtat e rezervuara.</p>
             <div class="footer-credits">
                 Krijuar nga: <strong>Jeton Elezi</strong><br>
                 <a href="https://www.jetonelezi.com" class="footer-link" target="_blank">www.jetonelezi.com</a>
