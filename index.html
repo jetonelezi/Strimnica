@@ -4,64 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strimnica - Mirësevini</title>
-    <link rel="icon" type="image/png" href="foto\LOGO STR.png">
+    <link rel="icon" type="image/png" href="foto/LOGO STR.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark: #1a1a1a;
+            --accent: #007bff;
+            --white: #ffffff;
+            --gradient: linear-gradient(45deg, #007bff, #00d4ff);
+        }
+
+        /* --- STILI I RI: SPONSORI FIX (MAKSIMALISHT I MADH) --- */
+        .sticky-sponsor {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            /* Kemi rritur padding që katrori të jetë më i madh */
+            padding: 25px 35px; 
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Qendron logot */
+            z-index: 10000;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            border: 2px solid transparent;
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            background-image: linear-gradient(white, white), var(--gradient);
+            animation: float-anim 3s infinite ease-in-out;
+            
+            /* Sigurohemi që katrori ka një madhësi minimale */
+            min-width: 150px;
+            min-height: 150px;
+        }
+
+        @keyframes float-anim {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .sticky-sponsor:hover {
+            transform: scale(1.05) translateY(-5px);
+            animation: none;
+            box-shadow: 0 25px 60px rgba(0, 123, 255, 0.4);
+        }
+
+        .sticky-label {
+            font-size: 12px; /* Pak më e madhe */
+            text-transform: uppercase;
+            color: #555; /* Pak më e errët */
+            font-weight: 900;
+            margin-bottom: 15px; /* Më shumë hapësirë */
+            letter-spacing: 2.5px;
+            position: relative;
+        }
+
+        .sticky-label::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient);
+            margin: 5px auto 0;
+            border-radius: 10px;
+        }
+
+        .sticky-logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 90px; /* Lartësia e zonës së logos */
+            overflow: visible; /* Lejon logon të dalë pak nëse duhet */
+        }
+
+        .sticky-logo {
+            /* Kjo rregull e bën logon të zmadhohet artificialisht për të mbushur hapësirën */
+            transform: scale(1.4); 
+            
+            height: 100%; /* Mbush lartësinë e container-it */
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+            transition: transform 0.3s ease;
+        }
+        
+        .sticky-sponsor:hover .sticky-logo {
+            transform: scale(1.5); /* Edhe më e madhe në hover */
+        }
+
+        /* ... Nav, Hero, Cards, Sponsors Section, Footer (Kodi mbetet i njëjtë) ... */
+        .logo { display: flex; align-items: center; gap: 12px; font-size: 34px; font-weight: 700; text-decoration: none; color: var(--dark); }
+        .nav-logo-img { height: 60px; width: auto; object-fit: contain; pointer-events: none; }
+        .sponsors-section { padding: 80px 20px; background: #f9f9f9; text-align: center; border-top: 1px solid #eee; }
+        .sponsors-title { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: #999; margin-bottom: 40px; font-weight: 700; }
+        .sponsors-container { display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; }
+        .sponsor-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: 0.4s ease; }
+        .sponsor-logo-bottom { height: 80px; width: auto; filter: grayscale(100%); opacity: 0.5; transition: 0.4s; }
+        .sponsor-item:hover .sponsor-logo-bottom { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+        footer { text-align: center; padding: 60px 20px; background: var(--dark); color: #ffffff; }
+        .footer-content { max-width: 1000px; margin: 0 auto; }
+        .footer-credits { margin-top: 25px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; color: #888; }
+        .footer-credits strong { color: #fff; }
+        .footer-link { color: #fff; text-decoration: none; font-weight: 700; }
+        .footer-link:hover { color: var(--accent); }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .sticky-sponsor {
+                bottom: 15px;
+                right: 15px;
+                padding: 15px 20px;
+                min-width: 100px;
+                min-height: 100px;
+            }
+            .sticky-logo-container { height: 60px; }
+            .sticky-logo { transform: scale(1.3); }
+            .sticky-label { font-size: 10px; margin-bottom: 10px; }
+        }
+    </style>
 </head>
 <body>
-<style>
-    .logo { 
-    display: flex; 
-    align-items: center; 
-    gap: 5px; /* Hapësira mes logos dhe tekstit */
-    font-size: 34px; 
-    font-weight: 700; 
-    text-decoration: none; 
-    color: var(--dark); 
-}
 
-.nav-logo-img {
-    height: 60px; /* Mund ta rregullosh sipas dëshirës */
-    width: auto;
-    object-fit: contain;
-}
+    <a href="https://www.jetonelezi.com" class="sticky-sponsor" target="_blank">
+        <span class="sticky-label">Sponsoruar nga</span>
+        <div class="sticky-logo-container">
+            <img src="foto/VIDEO LOGO.png" alt="Sponsor Logo" class="sticky-logo">
+        </div>
+    </a>
 
-/* Sigurohu që klikimi mbi foton e logos të mos hapë modal-in e galerisë */
-.nav-logo-img {
-    pointer-events: none; 
-}
-     footer { 
-            text-align: center; 
-            padding: 50px 20px; 
-            background: var(--dark); 
-            color: #ffffff; 
-            margin-top: 60px;
-        }
-        .footer-content { max-width: 1000px; margin: 0 auto; }
-        .footer-credits { 
-            margin-top: 20px; 
-            padding-top: 20px; 
-            border-top: 1px solid rgba(255,255,255,0.1); 
-            font-size: 0.95rem; 
-            color: #888;
-        }
-        .footer-credits strong { color: var(--accent); }
-        .footer-link { 
-            color: #ffffff; 
-            text-decoration: none; 
-            font-weight: 700; 
-            transition: 0.3s;
-            display: inline-block;
-            margin-top: 5px;
-        }
-        .footer-link:hover { color: var(--accent); }
-</style>
     <nav class="navbar">
         <a href="index.html" class="logo">
-        <img src="foto\LOGO STR.png" alt="Logo" class="nav-logo-img"> 
-         <div class="logo">STRIMNICA<span></span></div>
-    </a>
-       
+            <img src="foto/LOGO STR.png" alt="Logo" class="nav-logo-img"> 
+            <div>STRIMNICA</div>
+        </a>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Ballina</a></li>
@@ -80,78 +164,72 @@
         <div class="hero-content">
             <h1>Mirësevini në Shtëpinë Tonë Digjitale</h1>
             <p>Një vend ku historia takon të ardhmen. Eksploroni rrënjët dhe zhvillimet e fundit të fshatit tonë.</p>
-            <div class="hero-btns">
-            </div>
         </div>
     </header>
 
     <section class="quick-access">
         <div class="grid-container">
-            
             <div class="info-card">
                 <div class="icon">📰</div>
                 <h3>Lajmet e Fundit</h3>
                 <p>Informohuni mbi aktivitetet dhe ngjarjet e fundit në komunitet.</p>
                 <a href="lajme.html" class="read-more">Lexo më shumë →</a>
             </div>
-
             <div class="info-card highlight">
                 <div class="icon">🌳</div>
                 <h3>Trungu Familjar</h3>
                 <p>Gjeni vendin tuaj në pemën gjigante me mbi 2000 emra të fshatit.</p>
                 <a href="trungu-familjar.html" class="read-more">Kërko emrin →</a>
             </div>
-
             <div class="info-card">
                 <div class="icon">📸</div>
                 <h3>Galeria e Fotove</h3>
                 <p>Momente të kapura ndër vite, nga natyra te festat tona.</p>
                 <a href="galeria.html" class="read-more">Shiko fotot →</a>
             </div>
-            
-            
             <div class="info-card">
                 <div class="icon">📜</div>
                 <h3>Historia e Fshatit</h3>
                 <p>Udhëtoni në kohë për të zbuluar rrënjët e hershme dhe trashëgiminë tonë.</p>
                 <a href="historia.html" class="read-more">Lexo historinë →</a>
             </div>
-
-<div class="info-card">
-    <div class="icon">🏫</div>
-    <h3>SHF "Ibrahim Temo"</h3>
-    <p>Vatra e diturisë ku gjenerata të tëra formuan hapat e tyre të parë drejt dijes.</p>
-    <a href="shkolla.html" class="read-more">Mëso më shumë →</a>
-</div>
-
-<div class="info-card">
-    <div class="icon">💼</div>
-    <h3>Bizneset Lokale</h3>
-    <p>Zbuloni kompanitë dhe shërbimet që operojnë në fshatin tonë.</p>
-    <a href="bizneset.html" class="read-more">Shiko listën →</a>
-</div>
-
-<div class="info-card">
-    <div class="icon">⚽</div>
-    <h3>KF "Mërgimtari"</h3>
-    <p>Zemra sportive e fshatit. Historia, sukseset dhe rrugëtimi i klubit tonë ndër vite.</p>
-    <a href="klubi.html" class="read-more">Shiko klubin →</a>
-</div>
-
-<div class="info-card">
-    <div class="icon">📞</div>
-    <h3>Na Kontaktoni</h3>
-    <p>Keni pyetje apo dëshironi të kontribuoni? Na shkruani ose na vizitoni në rrjetet sociale.</p>
-    <a href="kontakt.html" class="read-more">Detajet e kontaktit →</a>
-</div>
-
-
-
-
+            <div class="info-card">
+                <div class="icon">🏫</div>
+                <h3>SHF "Ibrahim Temo"</h3>
+                <p>Vatra e diturisë ku gjenerata të tëra formuan hapat e tyre të parë drejt dijes.</p>
+                <a href="shkolla.html" class="read-more">Mëso më shumë →</a>
+            </div>
+            <div class="info-card">
+                <div class="icon">💼</div>
+                <h3>Bizneset Lokale</h3>
+                <p>Zbuloni kompanitë dhe shërbimet që operojnë në fshatin tonë.</p>
+                <a href="bizneset.html" class="read-more">Shiko listën →</a>
+            </div>
+            <div class="info-card">
+                <div class="icon">⚽</div>
+                <h3>KF "Mërgimtari"</h3>
+                <p>Zemra sportive e fshatit. Historia, sukseset dhe rrugëtimi i klubit tonë ndër vite.</p>
+                <a href="klubi.html" class="read-more">Shiko klubin →</a>
+            </div>
+            <div class="info-card">
+                <div class="icon">📞</div>
+                <h3>Na Kontaktoni</h3>
+                <p>Keni pyetje apo dëshironi të kontribuoni? Na shkruani ose na vizitoni në rrjetet sociale.</p>
+                <a href="kontakt.html" class="read-more">Detajet e kontaktit →</a>
+            </div>
         </div>
     </section>
 
-  <footer>
+    <section class="sponsors-section">
+        <h4 class="sponsors-title">Partnerët tanë:</h4>
+        <div class="sponsors-container">
+            <a href="https://www.jetonelezi.com" class="sponsor-item" target="_blank">
+                <img src="foto/logo-jeton.png" alt="Sponsor" class="sponsor-logo-bottom">
+            </a>
+        </div>
+    </section>
+
+    <footer>
         <div class="footer-content">
             <p>Strimnica &copy; 2026 - Të gjitha të drejtat e rezervuara.</p>
             <div class="footer-credits">
