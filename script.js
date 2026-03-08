@@ -629,43 +629,44 @@ const FAMILJET_MADHE = [
                 {name:"Shukri", description:"teksti"},
                 {name:"Havni", description:"djali i dytë i Qahilit, ka një vajzë: Razijen. Dhe ka adoptuar Nevzatin dhe Sulen nga kunata e tij", children:[
                   {name:"Nevzat", description:"teksti"},
-                  {name:"Sulejman", description:"teksti"},
+                  {name:"Sulejman", description:""},
                 ]},
               ]},
               {name:"Rufat", description:"djali i dytë i Mislimit, ka lënë vetëm një djalë: Avdiraufin.", children:[
                 {name:"Avdirauf", description:"djali i vetëm i Rufatit, ka lënë pesë djem dhe një vajzë: Xhevahirin, Ruzhdiun, Xhemilin, Rexhepin, Miqeremin dhe Pendijen. Pendija është martuar në Tetovë", children:[
                   {name:"Xhevahir", description:"djali i madh i Avdiraufit, ka tri vajza dhe katër djem: Ferdanen, Hajrijen, Naserin, Tekiun., Besimen, Ramiun dhe Tefikun.", children:[
-                    {name:"Naser", description:"teksti"},
-                    {name:"Teik", description:"teksti"},
-                    {name:"Rami", description:"teksti"},
-                    {name:"Tefik", description:"teksti"},
+                    {name:"Naser", description:""},
+                    {name:"Teik", description:""},
+                    {name:"Rami", description:""},
+                    {name:"Tefik", description:""},
                   ]},
                   {name:"Ruzhdi", description:"djali i dytë i Avdiraufit, ka katër vajza dhe tre djem: Gëzimen, Dashmirin, Zedijen, Gojartin, Dritonin, Naziren dhe Rufijen.", children:[
-                    {name:"Dashmir", description:"teksti"},
-                    {name:"Gojart", description:"teksti"},
-                    {name:"Driton", description:"teksti"},
+                    {name:"Dashmir", description:""},
+                    {name:"Gojart", description:""},
+                    {name:"Driton", description:""},
                   ]},
                   {name:"Xhemil", description:"djali i tretë i Avdiraufit, një djalë dhe dy vajza: Armendin, Zirafeten dhe Selvanisen.", children:[
-                    {name:"Armend", description:"teksti"},
+                    {name:"Armend", description:""},
                   ]},
-                  {name:"Rexhep", description:"djali i katërt i Avdiraufit, ka dy djem dhe tri vajza: Bashkimin, Arjetën, Senatin, Fetijen dhe Senadijen. ", children:[
-                    {name:"Bashkim", description:"teksti"},
-                    {name:"Senat", description:"teksti"},
+                  {name:"Rexhep", description:"djali i katërt i Avdiraufit, ka tre djem dhe tri vajza: Bashkimin, Arjetën, Senatin, Fetijen, Senadije dhe Jetmir. ", children:[
+                    {name:"Bashkim", description:""},
+                    {name:"Senat", description:"testi"},
+                    {name:"jetmir", description:""},
                   ]},
                   {name:"Miqirem", description:"djali i pestë i Avdiraufit, ka vetëm një vajzë: Linditën."},
                 ]},
               ]},
               {name:"Bafqar", description:"djali i tretë i Mislimit, ka lënë dy djem dhe katër vajza: Hakiun, Gjilnazen, Osmanin, Naxhijen, Hatixhen dhe Sheribanen. Gjilnazja është e martuar në Tenovë, ndërsa vajzat tjera në Tetovë.", children:[
                 {name:"Haki", description:"djali i madh i Bafqarit, ka lënë një djalë dhe një vajzë: Shazën dhe Zeqijen. Shazivari është shpërngulur në Tetovë, kurse Zeqija është martuar poashtu në Tetovë. Shazivari ka lënë vetëm një vajzë: Xhevrijen.", children:[
-                  {name:"Shaza", description:"teksti"},
+                  {name:"Shaza", description:""},
                 ]},
                 {name:"Osman", description:"djali i dytë i Bafqarit, ka dy djem: Bafqarin,  Bajramin.", children:[
                   {name:"Bafqar", description:"djali i madh i Osmanit, ka dy djem dhe një vajzë: Saliun, Nazifen dhe Muhametin.", children:[
-                    {name:"Sali", description:"teksti"},
-                    {name:"Muhamet", description:"teksti"},
+                    {name:"Sali", description:""},
+                    {name:"Muhamet", description:""},
                   ]},
                   {name:"Bajram", description:"djali i dytë Osmanit, ka vetëm një djalë: Hakiun.", children:[
-                    {name:"Haki", description:"teksti"},
+                    {name:"Haki", description:""},
                   ]},
                 ]},
 
