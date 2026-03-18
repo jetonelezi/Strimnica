@@ -1948,7 +1948,11 @@ const FAMILJET_MADHE = [
               ]},
               {name:"Berzat", description:"djali idytë i Muratit, poashtu dhe ky ska fëmijë trashëgimtarë meshkuj, dhe ka adoptuar djalin e Nakijes: Gajurin", children:[
                 {name:"Gajur", description:"djali i adoptuar nga Berzati, ka dy djem dhe një vajzë: Latifen, Idrizin dhe Muratin", children:[
-                  {name:"Idriz", description:"teksit"},
+                  {name:"Idriz", description:"djali i madh i Gajurit, ka një vajzë dhe një djalë: Besmirin dhe Sarën e cila është e martuar në Strimnicë te Afezati djali i Demiralis.", children:[
+                    {name:"Besmir", description:"djali i vetëm i Idrizit, ka një djalë: Lum", children:[
+                      {name:"Lum", description:""},
+                    ]},
+                  ]},
                   {name:"Murat", description:"teksti"},
                 ]},
               ]},
@@ -2676,8 +2680,8 @@ const FAMILJET_MADHE = [
                                     children:[
                                         {name:"Emini", description:"djali i parë i Demiralit, ka dy djem dhe një vajzë: Florijen, Florinin dhe Demirin.",
                                             children:[
-                                                {name:"Florin", description:"djali i dytë i Demiralit, nuk kemi informacion nëse ka fëmijë.",},
-                                                {name:"Demir", description:"djali i tretë i Demiralit, nuk kemi informacion nëse ka fëmijë.",},
+                                                {name:"Florin", description:"djali i parë i Demiraliut, nuk kemi informacion nëse ka fëmijë.",},
+                                                {name:"Demir", description:"djali i dytë i Demiraliut, nuk kemi informacion nëse ka fëmijë.",},
                                             ]
                                         },
                                         {name:"Jusuf", description:"djali i dytë i Demiralit, ka dy vajza: Musibën dhe Elmedinen.",},
