@@ -12,6 +12,7 @@
             --dark: #1a1a1a;
             --light: #f4f7f6;
             --text-gray: #666;
+            --blue: #007bff;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,162 +36,90 @@
         .news-header h1 { font-size: 3rem; font-weight: 900; margin-bottom: 10px; }
 
         /* Main Content */
-        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
 
         .news-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
 
         /* News Card Style */
         .news-card {
-            background: white; border-radius: 15px; overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex; flex-direction: column;
+            border: 1px solid #eee;
         }
-        .news-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .news-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-        .news-img { width: 100%; height: 200px; object-fit: cover; }
+        .news-img-container { width: 100%; height: 220px; overflow: hidden; position: relative; }
+        .news-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .news-card:hover .news-img { transform: scale(1.1); }
 
-        .news-content { padding: 25px; flex-grow: 1; }
+        .news-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
         .news-category { 
-            display: inline-block; padding: 5px 12px; background: rgba(39, 174, 96, 0.1); 
-            color: var(--accent); border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px;
+            display: inline-block; padding: 4px 12px; background: rgba(39, 174, 96, 0.1); 
+            color: var(--accent); border-radius: 50px; font-size: 0.75rem; font-weight: 800; 
+            margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
         }
-        .news-date { color: var(--text-gray); font-size: 0.85rem; margin-bottom: 10px; display: block; }
-        .news-title { font-size: 1.4rem; margin-bottom: 15px; color: var(--dark); font-weight: 700; }
-        .news-excerpt { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; }
+        .cat-urgent { background: rgba(231, 76, 60, 0.1); color: #e74c3c; } /* Stil për njoftime urgjente */
+
+        .news-date { color: var(--text-gray); font-size: 0.85rem; margin-bottom: 10px; display: flex; align-items: center; gap: 5px; }
+        .news-title { font-size: 1.3rem; margin-bottom: 12px; color: var(--dark); font-weight: 800; line-height: 1.3; }
+        .news-excerpt { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
 
         .btn-read {
             text-decoration: none; color: white; background: var(--accent);
-            padding: 10px 20px; border-radius: 8px; font-weight: 700;
+            padding: 12px 25px; border-radius: 10px; font-weight: 700;
             display: inline-block; transition: 0.3s; text-align: center;
+            font-size: 0.9rem;
         }
-        .btn-read:hover { background: #219150; }
+        .btn-read:hover { background: #219150; box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); }
 
         /* Footer */
-       footer { 
+        footer { 
             text-align: center; 
-            padding: 50px 20px; 
+            padding: 60px 20px; 
             background: var(--dark); 
             color: #ffffff; 
-            margin-top: 60px;
+            margin-top: 80px;
         }
-        .footer-content { max-width: 1000px; margin: 0 auto; }
         .footer-credits { 
-            margin-top: 20px; 
-            padding-top: 20px; 
+            margin-top: 25px; 
+            padding-top: 25px; 
             border-top: 1px solid rgba(255,255,255,0.1); 
             font-size: 0.95rem; 
             color: #888;
         }
         .footer-credits strong { color: var(--accent); }
-        .footer-link { 
-            color: #ffffff; 
-            text-decoration: none; 
-            font-weight: 700; 
-            transition: 0.3s;
-            display: inline-block;
-            margin-top: 5px;
-        }
+        .footer-link { color: #fff; text-decoration: none; font-weight: 700; transition: 0.3s; }
         .footer-link:hover { color: var(--accent); }
+
+        /* STILI I SPONSORIT (FLOATING) */
+        .sticky-sponsor {
+            position: fixed; bottom: 30px; right: 30px;
+            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);
+            padding: 20px; border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            display: flex; flex-direction: column; align-items: center;
+            z-index: 10000; transition: 0.4s; text-decoration: none;
+            border: 2px solid transparent; background-origin: border-box;
+            background-clip: padding-box, border-box;
+            background-image: linear-gradient(white, white), linear-gradient(45deg, #007bff, #00d4ff);
+            animation: float-anim 3s infinite ease-in-out;
+        }
+        @keyframes float-anim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .sticky-sponsor:hover { transform: scale(1.05); animation-play-state: paused; }
+        .sticky-label { font-size: 10px; text-transform: uppercase; color: #555; font-weight: 900; margin-bottom: 10px; letter-spacing: 1px; }
+        .sticky-logo { height: 60px; width: auto; object-fit: contain; }
+
         @media (max-width: 768px) {
             .news-header h1 { font-size: 2.2rem; }
+            .news-grid { grid-template-columns: 1fr; }
+            .sticky-sponsor { bottom: 15px; right: 15px; padding: 15px; }
         }
-
-
-        /* --- STILI I SPONSORIT FIX (FLOATING) --- */
-.sticky-sponsor {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    padding: 25px 35px; 
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    text-decoration: none;
-    border: 2px solid transparent;
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    background-image: linear-gradient(white, white), linear-gradient(45deg, #007bff, #00d4ff);
-    animation: float-anim 3s infinite ease-in-out;
-    min-width: 150px;
-    min-height: 150px;
-}
-
-@keyframes float-anim {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-.sticky-sponsor:hover {
-    transform: scale(1.05) translateY(-5px);
-    animation: none;
-    box-shadow: 0 25px 60px rgba(0, 123, 255, 0.4);
-}
-
-.sticky-label {
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #555;
-    font-weight: 900;
-    margin-bottom: 15px;
-    letter-spacing: 2.5px;
-    position: relative;
-    font-family: 'Inter', sans-serif;
-}
-
-.sticky-label::after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 3px;
-    background: linear-gradient(45deg, #007bff, #00d4ff);
-    margin: 5px auto 0;
-    border-radius: 10px;
-}
-
-.sticky-logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 90px;
-    overflow: visible;
-}
-
-.sticky-logo {
-    transform: scale(1.4); /* Kjo e zmadhon logon që të mbushë katrorin */
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
-}
-
-/* Përshtatja për telefon (Mobile) */
-@media (max-width: 768px) {
-    .sticky-sponsor {
-        bottom: 15px;
-        right: 15px;
-        padding: 15px 20px;
-        min-width: 110px;
-        min-height: 110px;
-    }
-    .sticky-logo-container { height: 60px; }
-    .sticky-logo { transform: scale(1.3); }
-    .sticky-label { font-size: 10px; margin-bottom: 10px; }
-}
-
     </style>
 </head>
 <body>
@@ -204,24 +133,36 @@
 
     <header class="news-header">
         <h1>Lajmet e Fshatit</h1>
-        <p>Qëndroni të informuar me gjithçka që ndodh në Strimnicë.</p>
+        <p>Informacionet e fundit mbi aktivitetet dhe ngjarjet në Strimnicë.</p>
     </header>
 
     <a href="https://www.jetonelezi.com" class="sticky-sponsor" target="_blank">
-    <span class="sticky-label">Sponsoruar nga</span>
-    <div class="sticky-logo-container">
+        <span class="sticky-label">Sponsoruar nga</span>
         <img src="foto/VIDEO LOGO.png" alt="Sponsor Logo" class="sticky-logo">
-    </div>
-</a>
+    </a>
+
     <div class="container">
         <div class="news-grid">
 
-           <h1 style="text-align: center;">NUK KEMI ENDE LAJME PER PUBLIKIM....</h1>
+            <article class="news-card">
+                <div class="news-img-container">
+                    <img src="foto\bajrami.png" alt="Fiter Bajrami" class="news-img">
+                </div>
+                <div class="news-content">
+                    <span class="news-category cat-urgent">Njoftim Me Rëndësi</span>
+                    <span class="news-date">📅 20 Mars, 2026</span>
+                    <h2 class="news-title">Njoftim për Faljen e Namazit të Fitër Bajramit</h2>
+                    <p class="news-excerpt">Njoftojmë të gjithë besimtarët e fshatit Strimnicë se falja namazit të sabahut do te jetë në ora: 05:06 , ndërsa namazi i Fitër Bajramit do të bëhet nesër në orën 06:20 .</p>
+                    <a href="https://www.facebook.com/share/p/18PaHz3RTM/" class="btn-read">Lexo njoftimin e plotë</a>
+                </div>
+            </article>
+
+        
 
         </div>
     </div>
 
-      <footer>
+    <footer>
         <div class="footer-content">
             <p>Strimnica &copy; 2026 - Të gjitha të drejtat e rezervuara.</p>
             <div class="footer-credits">
@@ -230,5 +171,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>
